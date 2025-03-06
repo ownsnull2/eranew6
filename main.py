@@ -1,4 +1,3 @@
-import asyncio
 from datetime import datetime, timedelta, timezone
 import logging
 import pytz
@@ -7,6 +6,7 @@ import json
 
 from aiogram import Bot, Dispatcher, F, types
 import aiohttp
+import uvloop
 
 logging.basicConfig(level=logging.INFO)
 
@@ -420,4 +420,4 @@ async def handler(message: types.Message):
 async def main():
     await dp.start_polling(bot)
 
-asyncio.run(main())
+uvloop.run(main())
