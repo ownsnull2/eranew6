@@ -9,6 +9,7 @@ from aiogram import Bot, Dispatcher, F, types
 import aiohttp
 import uvloop
 
+uvloop.install()
 logging.basicConfig(level=logging.INFO)
 
 months = {
@@ -421,5 +422,4 @@ async def handler(message: types.Message):
 async def main():
     await dp.start_polling(bot)
 
-uvloop.install()
 asyncio.run(main())
