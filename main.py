@@ -1,3 +1,4 @@
+import asyncio
 from datetime import datetime, timedelta, timezone
 import logging
 import pytz
@@ -420,4 +421,5 @@ async def handler(message: types.Message):
 async def main():
     await dp.start_polling(bot)
 
-uvloop.run(main())
+uvloop.install()
+asyncio.run(main())
